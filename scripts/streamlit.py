@@ -5,8 +5,6 @@ import plotly.express as px
 
 st.title("Cuadro de Mando Integral")
 
-#https://www.datacamp.com/tutorial/streamlit
-
 # Métricas financieras
 st.header("Métricas Financieras")
 ## Ingresos totales por canal de marketing
