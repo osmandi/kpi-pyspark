@@ -322,7 +322,7 @@ df_visitas_lote.select(F.substring(F.col("date"), 1, 4).cast(T.IntegerType()).al
 (df_visitas_lote.where(F.col("trafficSource.campaign") != '(not set)')
     .select(F.col("trafficSource.campaign").alias("campaign"))
     .groupBy("campaign").count()
-).toPandas().to_csv(os.path.join(DATA_DIRECTORY_REPORTS, "camapnas_mas_visitas.csv"), index=False)
+).toPandas().to_csv(os.path.join(DATA_DIRECTORY_REPORTS, "campanas_mas_visitas.csv"), index=False)
 
 ## Aprendizaje y crecimiento
 ### Tasa de retención de usuarios

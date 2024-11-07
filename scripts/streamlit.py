@@ -51,7 +51,7 @@ tiempo_medio_visita_anio["year"] = tiempo_medio_visita_anio["year"].apply(str)
 st.bar_chart(tiempo_medio_visita_anio, x="year", y="avg_visit_time")
 
 ## Compaña con más visitas
-campanas_mas_visitas = pd.read_csv("/app/reports/camapnas_mas_visitas.csv")
+campanas_mas_visitas = pd.read_csv("/app/reports/campanas_mas_visitas.csv")
 st.write("Campaña con más visitas")
 st.bar_chart(campanas_mas_visitas, x="campaign", y="count", horizontal=True)
 
