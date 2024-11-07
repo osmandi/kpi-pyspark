@@ -7,15 +7,18 @@ st.title("Cuadro de Mando Integral")
 
 # Métricas financieras
 st.header("Métricas Financieras")
-## Ingresos totales por canal de marketing
-ingresos_totales_por_canal_marketing = pd.read_csv("/app/reports/ingresos_totales_por_marketing.csv")
-st.write("Ingresos totales por canal de marketing")
-st.bar_chart(ingresos_totales_por_canal_marketing, x="channelGrouping", y="totalRevenue")
+col1, col2 = st.columns(2, vertical_alignment="top")
+with col1:
+    ## Ingresos totales por canal de marketing
+    ingresos_totales_por_canal_marketing = pd.read_csv("/app/reports/ingresos_totales_por_marketing.csv")
+    st.write("Ingresos totales por canal de marketing")
+    st.bar_chart(ingresos_totales_por_canal_marketing, x="channelGrouping", y="totalRevenue")
 
-## Ingresos totales por dispositivo
-ingresos_totales_por_dispositivo = pd.read_csv("/app/reports/ingresos_totales_por_dispositivo.csv")
-st.write("Ingresos totales por dispositivo")
-st.bar_chart(ingresos_totales_por_dispositivo, x="deviceName", y="totalRevenue", horizontal=True)
+with col2:
+    ## Ingresos totales por dispositivo
+    ingresos_totales_por_dispositivo = pd.read_csv("/app/reports/ingresos_totales_por_dispositivo.csv")
+    st.write("Ingresos totales por dispositivo")
+    st.bar_chart(ingresos_totales_por_dispositivo, x="deviceName", y="totalRevenue", horizontal=True)
 
 ## Ingresos totales por usuario
 ingresos_totales_usuario = pd.read_csv("/app/reports/ingresos_totales_usuario.csv")[["totalRevenue"]]
@@ -27,7 +30,7 @@ col2.plotly_chart(fig)
 
 # Métricas de clientes
 st.header("Métricas Clientes")
-col1, col2 = st.columns(2, vertical_alignment="center")
+col1, col2 = st.columns(2, vertical_alignment="top")
 with col1:
     ## Tasa de conversión por canal
     st.write("Tasa de conversión por canal")
